@@ -1,0 +1,155 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+header{
+    background-color: #1B2021;
+    position: relative;
+}
+.nav_links{
+
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem;
+
+}
+.nav_links a{
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+}
+.nav_links a:hover{
+    color:#16E0BD;
+}
+.container{
+    display: flex;
+    gap: 3rem;
+    padding: 2em;
+}
+.hero_section{
+position: relative;
+margin-left: 7rem;
+  }
+.hero_section img{
+    width: 200px;
+    border-radius: 20%;
+}
+.hero_content{
+    width: 315px;
+
+}
+.her{
+    color: #E3DCC2; 
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+.her1{
+      color: #E3DC95;
+    font-size: 1.5rem;
+    line-height: 4rem;
+    position: relative;
+    font-family: "Playwrite DE Grund", cursive;
+}
+.her1::after{
+    content: '|';
+    width: 100%;
+    color:#f7fbfc;
+    position: absolute;
+    background-color: #1B2021;
+    right: 0;
+    animation: type 3s steps(30) infinite alternate,
+                line 1s infinite alternate;
+}
+@keyframes type {
+    100%{
+      width: 0%;
+    }
+    
+}
+    @keyframes line {
+        50%{
+            color:#1B2021;
+        }
+    }
+.hero_content p{
+    color:#E3DCC2;
+    width: 50vw;
+    font-size: 18px;
+    font-family: "Rubik", sans-serif;
+    line-height: 1.4rem;
+}
+ .hero_btn {
+    padding: 1rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+
+    background-color: transparent;
+    color:#F3E9DC;
+    border-style: 1px solid;
+    border-color:#DAB49D;
+
+
+}
+.hero_btn:hover{
+    cursor:pointer;
+   color:#E3DCC2;
+ 
+   background-color: #51513D;
+  
+}
+.sec-container{
+    background-color:#23231A;
+    display: flex;
+    gap: 3rem;
+    padding: 2em;
+}
+.main-section{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap:2rem;
+   
+}
+.main-section img{
+    width: 200px;
+    margin-left: 7rem;
+}
+.main-content{
+position: relative;
+width: 60vw;
+}
+.main-content span{
+    color:#4D8B31
+}
+.main-content h2{
+    color:#ffffff;
+}
+.main-content h3{
+    line-height: 2.2rem;
+    color:#E3DCC2;
+}
+.main-content p{
+    color:#E3DCC2;
+    width: 60vw;
+    font-size: 18px;
+    font-family: "Rubik", sans-serif;
+}
+
+ .flex{
+display: flex;
+gap:0.6rem;
+position: relative;
+top:1rem;
+}
+.flex img{
+    
+    width: 35px;
+    height: 35px;
+    background-color:unset;
+}
