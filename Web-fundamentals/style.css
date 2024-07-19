@@ -145,20 +145,20 @@ header {
   margin-top: 0.4rem;
 }
 
-.img_email {
-  background-color: #27282a;
-  box-shadow: #313234;
-  line-height: 55px;
-}
-.material-symbols-outlined {
-  font-variation-settings:
-  :#F9DB78,
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+.icon .fa-icon {
+  position: relative;
+  background: #313234;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: #27282a;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
+.fa-icon::before{
+background-image: url(/Assets/mail_24dp_F9DB78_FILL0_wght400_GRAD0_opsz24.svg);
+}
 
 .icon h4 {
   font-size: 0.8rem;
