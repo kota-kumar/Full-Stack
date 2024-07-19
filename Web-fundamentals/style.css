@@ -133,14 +133,10 @@ header{
 }
 .img_email{
 
-  width: 60px;
-border-radius: 16px;
 background-color: #27282a;
 box-shadow: #313234;
-
-z-index: 1;
- 
 }
+
 
 .left-content{
     background-color:#27282a;
