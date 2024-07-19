@@ -129,11 +129,17 @@ header{
 .icon{
   display: flex;
   flex-direction: row;
+  gap:1rem
 }
-.icon img{
-  width: 50px;
-  height: 50px;
-  
+.img_email{
+
+  width: 60px;
+border-radius: 16px;
+background-color: #27282a;
+box-shadow: #313234;
+
+z-index: 1;
+ 
 }
 
 .left-content{
