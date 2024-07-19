@@ -146,9 +146,19 @@ header {
 }
 
 .img_email {
-
-  box-shadow: #27282a;
+  background-color: #27282a;
+  box-shadow: #313234;
+  line-height: 55px;
 }
+.material-symbols-outlined {
+  font-variation-settings:
+  :#F9DB78,
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
 
 .icon h4 {
   font-size: 0.8rem;
