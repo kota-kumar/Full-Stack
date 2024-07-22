@@ -142,27 +142,32 @@ header {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  margin-top: 0.4rem;
+  margin-top: 0.9rem;
 }
 
 .icon .fa-icon {
   position: relative;
   background: #313234;
-  padding: 20px;
+  padding: 5px;
   border-radius: 14px;
   box-shadow: #27282a;
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
+  width: 40px;
+height: 40px;
+ 
 }
 
-.fa-icon::before{
-background-image: url(/Assets/mail_24dp_F9DB78_FILL0_wght400_GRAD0_opsz24.svg);
+.fa-icon img{
+width: 30px;
+height: 30px;
+align-items: center;
 }
 
 .icon h4 {
   font-size: 0.8rem;
-  margin-top: 1rem;
+
   font-weight: 400;
 }
 
