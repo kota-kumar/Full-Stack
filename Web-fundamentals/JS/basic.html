@@ -1,38 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <style>
-            #pass {
-                display: block;
-                margin: auto;
-                margin-top: 10rem;
-                width: 25rem;
-                height: 3rem;
-            }
+<html>
+<!-- Please NOTE that the link to assets (like images) need to be set in global context.
+For example:
+To access an image from assets folder correct way to set src attribute is 
 
-            p {
-                text-align: center;
-                font-size: 3rem;
-                display: none;
-            }
-        </style>
-    </head>
-    <body>
-        <input type="text" id="pass" />
-        <p>Caps on!</p>
-        <script>
-            //Q- Write a script which keeps checking the password being entered. It should check if capslock is on or off if its on it should not allow to type and show "caps on" on screen, also it should only allow to type if the shift in pressed down.
+src = 'profile.png'
 
+instead of 
 
+src = './assets/profile.png'
+-->
 
-            //   Solution :
-          
-           })
-        </script>
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-top: 5rem;
+        }
+
+        .movies {
+            height: 10rem;
+            width: 10rem;
+            margin: 2rem;
+        }
+
+        .price {
+            background-color: rgb(247 84 33);
+            height: 8rem;
+            padding: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .heading {
+            background-color: rgba(0, 0, 0, 0.856);
+            height: 2rem;
+        }
+
+        .heading,
+        .price {
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+
+        select,
+        h1 {
+            position: fixed;
+        }
+
+        h1 {
+            top: 0px;
+        }
+
+        select {
+            width: 8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>BOOK MY SHOW</h1>
+    <select>
+        <option value="none">None</option>
+        <option value="action">Action</option>
+        <option value="romance">Romance</option>
+        <option value="comedy">Comedy</option>
+    </select>
+
+    <div class="movies">
+        <h3 class="heading">Example-1 action</h3>
+        <p class="price" data-category="action">Rs. 100</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Example-2 action</h3>
+        <p class="price" data-category="action">Rs 200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Example-3 action</h3>
+        <p class="price" data-category="action">Rs. 150</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Example-4 romance</h3>
+        <p class="price" data-category="romance">Rs 200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Example-5 romance</h3>
+        <p class="price" data-category="romance">Rs. 150</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Example-6 romance</h3>
+        <p class="price" data-category="romance">Rs. 150</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Example-7 action</h3>
+        <p class="price" data-category="action">Rs 200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Example-8 comedy</h3>
+        <p class="price" data-category="comedy">Rs. 100</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Example-9 romance</h3>
+        <p class="price" data-category="romance">Rs. 100</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Example-10 comedy</h3>
+        <p class="price" data-category="comedy">Rs 200</p>
+    </div>
+
+</body>
+<script>
+    // Write your JS program here ====
+    const selected = document.querySelector("select")
+    selected.addEventListener("change", function(){
+      const filter_value = selected.value
+      console.log(filter_value)
+      const all_prices = document.querySelectorAll(".price")
+      for(let i =0;i<all_prices.length;i++){
+        if(all_prices[i].getAttribute("data-category")!=filter_value){
+          all_prices[i].parentElement.style.display="none"
+        }else{
+          all_prices[i].parentElement.style.display="block"
+        }
+      }
+    })
+</script>
 </html>

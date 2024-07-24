@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.head-section {
+    height: 6rem;
+    background-color: #4d4d4d;
+    display: flex;
+    align-items: center;
+}
+.color-section{
+    width: 21rem;
+    height: 3.6rem;
+    background-color: #3d3d3d;
+   margin-left: 4rem;
+   display: flex;
+   align-items: center;
+   
+}
+.color-box{
+  margin-left: 1rem;
+}
+.yellow{
+    width: 4rem;
+    height: 1.5rem;
+    background-color: yellow;
+
+}
+.lightblue{
+    width: 4rem;
+    height: 1.5rem;
+    background-color: lightblue;
+
+}
+.green{
+    width: 4rem;
+    height: 1.5rem;
+    background-color: green;
+
+}
+.burlywood{
+    width: 4rem;
+    height: 1.5rem;
+    background-color:burlywood
+}
+.action-btn{
+    width: 6rem;
+    height: 3.6rem;
+    margin-left: 2rem;
+    background-color: #3d3d3d;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color:white;
+    font-size:1.5rem;
+}
+.add-btn:hover{
+    color: yellowgreen;
+    width: 50%;
+    font-size: 2rem;
+    text-align: center;
+}
+.delete-btn:hover{
+    color:yellowgreen;
+    width: 50%;
+    font-size: 2rem;
+    text-align: center;
+}
+.new-ticket{
+width: 50vw;
+height: 45vh;
+    background-color: grey;
+    display: flex;
+  
+    position: absolute;
+    top:30%;
+    left:28%;
+}
+.text-area{
+    width: 70%;
+    height: 100%;
+    resize: none;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    background-color: lightgray;
+}
+.task-priority-color{
+    width: 30%;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.priority-color{
+    height: 3rem;
+    width: 5rem;   
+   
+  
+}
