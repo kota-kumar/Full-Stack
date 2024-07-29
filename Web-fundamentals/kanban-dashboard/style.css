@@ -1,10 +1,11 @@
-* {
+    * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding: 0;
+    background-color: silver;
 }
 
 .head-section {
@@ -12,39 +13,62 @@ body {
     background-color: #4d4d4d;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
 }
 .color-section{
-    width: 21rem;
-    height: 3.6rem;
+    width: 50rem;
+    height: 4rem;
     background-color: #3d3d3d;
-   margin-left: 4rem;
+
    display: flex;
    align-items: center;
-   
+   justify-content:space-evenly;
+   position: relative;
+  
+}
+h5{
+    color:aliceblue;
+    font-size: 13px;
+    text-align: start;
+  position: absolute;
+  left: 1rem;
 }
 .color-box{
+    width: 100%;
   margin-left: 1rem;
+  border-radius: 55px;
+  display: flex;
+  flex-direction: column;
+ justify-content: center; 
+
+ 
+}
+.color-box h4{
+    color:aliceblue;
+    margin-left: 2rem;
+    font-size: 10px;
+text-wrap:nowrap;
 }
 .yellow{
-    width: 4rem;
+    width: 1.5rem;
     height: 1.5rem;
     background-color: yellow;
 
 }
 .lightblue{
-    width: 4rem;
+    width: 1.5rem;
     height: 1.5rem;
     background-color: lightblue;
 
 }
 .green{
-    width: 4rem;
+    width: 1.5rem;
     height: 1.5rem;
     background-color: green;
 
 }
 .burlywood{
-    width: 4rem;
+    width: 1.5rem;
     height: 1.5rem;
     background-color:burlywood
 }
@@ -54,6 +78,7 @@ body {
     margin-left: 2rem;
     background-color: #3d3d3d;
     display: flex;
+  
     justify-content: space-around;
     align-items: center;
     color:white;
@@ -71,15 +96,15 @@ body {
     font-size: 2rem;
     text-align: center;
 }
-.new-ticket{
-width: 50vw;
-height: 45vh;
-    background-color: grey;
+.new-ticket-area{
+    width: 55%;
+    height: 20rem;
+    background-color: #cecaca;
+    position: absolute;
+    left: 18em;
+    top:10rem;
     display: flex;
   
-    position: absolute;
-    top:30%;
-    left:28%;
 }
 .text-area{
     width: 70%;
@@ -87,20 +112,81 @@ height: 45vh;
     resize: none;
     outline: none;
     border: none;
-    font-size: 2rem;
-    background-color: lightgray;
+    background-color: transparent;
+   
 }
-.task-priority-color{
+.task-color-selector{
     width: 30%;
-    background-color: grey;
+    height: 100%;
+    background-color: #3d3d3d;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 .priority-color{
-    height: 3rem;
-    width: 5rem;   
+    width: 4rem;
+    height: 2.3rem;
+}
+.ticket-area{
+    display: none;
+    justify-content: center;
+    padding: 2rem;
+    
+}
+.task-details{
+   border: 1px solid gray;
+    width: 15rem;
+    height: 12rem;
+    background-color:thistle;
+   display: none;
+}
+.ticket-color{
+    height: 1rem;
+    width: 15rem;
+}
+.ticket-id{
+    height: 2rem;
+    background-color: lightblue;
+}
+.lock-icon{
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: end;
+    align-items: end; 
+    height: 74%;
+}
+
+.main-body{
+    height:fit-content;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+    align-items: start;
+gap: 2rem;
+margin-top: 0.5rem;
+
+}
+.not_started{
+    width: 25vw;
+    
+    border: 3px double;   
+}
+
+.workinprogress{
+    width: 25vw;
+    border: 3px double;
+    
+    
+}
+.review{
+    width: 25vw;
+    border: 3px double;
    
-  
+    
+}
+.completed{
+    width: 25vw;
+    border: 3px double;
+ 
 }

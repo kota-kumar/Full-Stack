@@ -14,11 +14,21 @@
 <body>
     <nav>
         <div class="head-section">
+            
             <div class="color-section">
-                <div class="yellow color-box"></div>
-                <div class="lightblue color-box"></div>
-                <div class="green color-box"></div>
-                <div class="burlywood color-box"></div>
+                <h5>Task Categorization: </h5>
+                <div class="yellow color-box">
+                    <h4>Not Started</h4>
+                 </div>
+                <div class="lightblue color-box">
+                    <h4>Work in progress</h4>
+                </div>
+                <div class="burlywood color-box">
+                    <h4>In review</h4>
+                </div>
+                <div class="green color-box">
+                        <h4>Completed</h4>
+                </div>
 
             </div>
             <div class="action-btn">
@@ -27,15 +37,38 @@
             </div>
         </div>
     </nav>
-    <div class="new-ticket">
-        <textarea placeholder="Enter you task details" class="text-area"></textarea>
-        <div class="task-priority-color">
+    <div class="ticket-area">
+    <div class="task-details">
+        <div class="ticket-color yellow"></div>
+            <div class="ticket-id"></div>
+            <div class="ticket-task"></div>
+            <div class="lock-icon"><i class="fa-solid fa-lock"></i></div>      
+    </div>
+    </div>
+    
+        <div class="new-ticket-area">
+        <textarea placeholder="Enter your task details" class="text-area"></textarea>
+        <div class="task-color-selector">
             <div class="priority-color yellow"></div>
             <div class="priority-color lightblue"></div>
             <div class="priority-color green"></div>
             <div class="priority-color burlywood"></div>
         </div>
-    </div>
+        </div>
+        <div class="main-body">
+            <table class="main-body not_started">
+                <th>Not Started</th>
+            </table>
+            <table class="main-body workinprogress">
+                <th>Work in Progress</th>
+            </table>
+            <table class="main-body review">
+                <th>In Review</th>
+            </table>
+            <table class="main-body completed">
+                <th>Completed</th>
+            </table>
+            
 </body>
-
+<script src="/Web-fundamentals/kanban-dashboard/script.js"></script>
 </html>
