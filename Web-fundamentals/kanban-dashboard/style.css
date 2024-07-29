@@ -53,6 +53,7 @@ text-wrap:nowrap;
     width: 1.5rem;
     height: 1.5rem;
     background-color: yellow;
+    
 
 }
 .lightblue{
@@ -129,21 +130,24 @@ text-wrap:nowrap;
     height: 2.3rem;
 }
 .ticket-area{
-    display: none;
+   display: flex;
     justify-content: center;
-    padding: 2rem;
-    
+    gap:1rem;
+
 }
 .task-details{
    border: 1px solid gray;
     width: 15rem;
     height: 12rem;
+   position: relative;
     background-color:thistle;
-   display: none;
+
+   
 }
 .ticket-color{
     height: 1rem;
     width: 15rem;
+    border: 1px solid gray;
 }
 .ticket-id{
     height: 2rem;
@@ -155,6 +159,10 @@ text-wrap:nowrap;
     justify-content: end;
     align-items: end; 
     height: 74%;
+   position: absolute;
+   left: 13.5rem;
+   top:2.8rem
+    
 }
 
 .main-body{
@@ -169,8 +177,12 @@ margin-top: 0.5rem;
 }
 .not_started{
     width: 25vw;
-    
-    border: 3px double;   
+    display: flex;
+    flex-direction: column;
+    border: 3px double; 
+    align-items: center;
+    justify-content: center; 
+  
 }
 
 .workinprogress{
@@ -189,4 +201,7 @@ margin-top: 0.5rem;
     width: 25vw;
     border: 3px double;
  
+}
+.active{
+    border: 2px solid rgb(230, 53, 13);
 }
