@@ -1,0 +1,65 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: #01121f;
+  
+    color:white;
+}
+.container{
+        height: 100vh;
+        width: 100vw;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.weather{
+    display: flex;
+    gap:2rem;
+    align-items: center;
+  
+}
+.temperature{
+    font-size: 1.4rem;
+}
+.location p{
+    font-size: 2rem;
+    line-height: 2rem;
+}
+.location span{
+    font-size: 1rem;
+}
+nav{
+    height: 100px;
+    padding: 1rem 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0%;
+    background-color: rgb(3, 78, 53);
+    }
+nav form{
+    width: 70%;
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+}
+.search-area{
+    width: 98%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    border-bottom: 2px solid gray;
+    color:whitesmoke;
+}
+form button{
+    background-color: aquamarine;
+    padding: 1.4rem;
+    font-size: 1.5rem;
+    color:rgb(2, 37, 17);
+    cursor: pointer;
+}
