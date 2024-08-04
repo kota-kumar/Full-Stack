@@ -12,6 +12,68 @@
 </head>
 
 <body>
-     
+    <!-- nav section starts here
+    we create Menu, prioties, add and delete btn
+    -->
+    <nav>
+        <div class="home">
+        <i class="fa-solid fa-bars"></i></div>
+        <div class="priority_container">
+            <div class="priority_color">
+            <div class="yellow color_box"></div><p>Low Priority</p>
+            <div class="green color_box"></div><p>Medium Priority</p>
+            <div class="lightblue color_box"></div><p>High Priority</p>
+            <div class="grey color_box"></div><p>Critical</p>
+</div>
+<section>
+        <form class="ticket_filter">
+            <label class="filter">Choose priority</label>
+            <select Name="Priority_filter" id="Priority_filter">
+                <option value="" disabled selected>Select your priority</option>
+            <option >Low Priority</option>
+            <option>Medium Priority</option>
+            <option>High Priority</option>
+            <option>Critical</option>
+        </select>
+        <div class="filter_removal"><i class="fa-solid fa-filter"></i></div>
+            </form>
+</section>
+<div class="action_btn">
+    <div class="add_btn"><i class="fa-solid fa-plus"></i></div>
+    <div class="delete_btn"><i class="fa-solid fa-trash-can"></i></div>
+                   </div>
+                   
+                   </div>              
+    </nav>
+    <!-- nav section ends here -->
+<!-- new task container section starts here -->
+ <section>
+        <div class="task_container">
+                <textarea class="text_area" placeholder="Enter your task details"></textarea>
+                <div class="color_selector">
+                    <div class="color yellow active"></div>
+                    <div class="color green"></div>
+                    <div class="color lightblue"></div>
+                    <div class="color grey"></div>
+                </div>
+        </div>
+        </section>
+     <!-- new task container section ends here -->
+      <!-- Ticket container section starts here -->
+        <div class="ticket_cont">
+            <!-- <div class="ticket_area">
+                <div class="ticket_color yellow"></div>
+                <div class="ticket_id">1233</div>
+                <div class="ticket_task">new task</div>
+                <div class="lock_icon"><i class="fa-solid fa-lock"></i></div>
+            </div>-->
+        </div>
+       <!-- Ticket container section ends here -->
+
+<!-- task status category section started here -->
+
+
 </body>
+<script src="/Web-fundamentals/kanban-dashboard/script.js"></script>
+<script src="https://unpkg.com/shortid-dist@1.0.5/dist/shortid-2.2.13.min.js"></script>
 </html>
