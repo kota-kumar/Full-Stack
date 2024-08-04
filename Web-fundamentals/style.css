@@ -178,6 +178,7 @@ align-items: center;
   font-weight: 600;
 }
 
+
 .left-content {
   background-color: #27282a;
   height: 95vh;
@@ -190,6 +191,7 @@ align-items: center;
   margin-top: 1rem;
   margin-left: 0.5rem;
   position: sticky;
+  padding-left: 1rem;
 }
 
 .left-content img {
@@ -218,12 +220,20 @@ align-items: center;
 }
 
 .left-content hr {
-  width: 15em;
+  width: 17em;
   height: 4px;
-  background-color: #313234;
+  background-color: #3d3e3f;
   border: none;
   border-radius: 15px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
+.social-links{
+
+  font-size: 2rem;
+ 
+}
+
 
 .right-content {
   display: flex;
