@@ -181,7 +181,7 @@ align-items: center;
 
 .left-content {
   background-color: #27282a;
-  height: 95vh;
+  height: 114vh;
   border-radius: 20px;
   color: aliceblue;
   display: flex;
@@ -198,6 +198,7 @@ align-items: center;
   background-color: #313234;
   border-radius: 35px;
   margin-bottom: 1rem;
+  
 }
 
 .left-content h2 {
@@ -220,17 +221,18 @@ align-items: center;
 }
 
 .left-content hr {
-  width: 17em;
-  height: 4px;
-  background-color: #3d3e3f;
-  border: none;
-  border-radius: 15px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  background-color: #696b6d;
+  width: 20vw;
+
+  margin: 0.9rem;
+
 }
 .social-links{
-
-  font-size: 2rem;
+display: flex;
+gap:1rem;
+justify-content: start;
+align-items: start;
+margin-right: 12rem;
  
 }
 
