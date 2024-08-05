@@ -137,7 +137,7 @@ nav{
     justify-content: center;
     padding: 2rem;
     gap: 2rem;
-    position: absolute;
+  
 }
 .ticket_area{
     width: 16rem;
@@ -163,4 +163,19 @@ nav{
 .active{
     border: 4px solid lightyellow;
 }
+/* .task_category_container{
 
+
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+ 
+}
+table{
+    width: 100vw;
+    height: 80vh;
+    border: 2px double black;
+    display: flex;
+align-items: start;
+justify-content: space-between;
+} */

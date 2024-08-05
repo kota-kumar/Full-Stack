@@ -30,6 +30,7 @@ task_cont.addEventListener("keydown", function (e) {
     if (key == "Shift") {
         let text = textarea.value;
         new_ticket(text)
+        text.value.remove;
     }
 })
 function new_ticket(task) {
