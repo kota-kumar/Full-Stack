@@ -1,141 +1,184 @@
-let task_cont = document.querySelector(".task_container")
-task_cont.style.display = "none"
 let add_btn = document.querySelector(".add_btn")
-let textarea = document.querySelector(".text_area")
-let tick_cont = document.querySelector(".ticket_cont")
-let all_clr = document.querySelectorAll(".color")
 let delete_btn = document.querySelector(".delete_btn")
-let Priority_filter =document.querySelector("#Priority_filter")
-let color_box = document.querySelectorAll(".priority_color>p")
-let color_fit = document.querySelectorAll("color_box")
-let filter_remove=document.querySelector(".filter_removal")
-
+let tick_cont = document.querySelector(".task_container")
+let textarea = document.querySelector(".text_area")
+let ticket_cont = document.querySelector(".ticket_cont")
+let priority_clr = document.querySelectorAll(".color")
+let filter_field = document.querySelector("#Priority_filter")
+let filter_priorirty = document.querySelectorAll(".priority_color>p")
+let color_box = document.querySelectorAll(".color_box");
+let filter_removal = document.querySelector(".filter_removal")
+let is_click = false;
+let is_delete_clicked = false;
 let unlockClass = 'fa-lock-open'
+let ticket_array = []
 let lockClass = 'fa-lock'
 let isclicked = false;
-let removetaskflag = false;
-let addtaskflag = false;
-let priority_clr = "grey"
-let color_array = ['yellow', 'green', 'lightblue', 'grey'];
-add_btn.addEventListener("click", function () {
-    isclicked = !isclicked
-    if (isclicked == true) {
-        task_cont.style.display = "flex"
-    } else {
-        task_cont.style.display = "none"
+let default_clr = "yellow";
+let clrArray = ['yellow', 'green', 'lightblue', 'grey']
+let tickets_from_storage =JSON.parse(localStorage.getItem("ticket_array"))
+if(tickets_from_storage){
+    ticket_array=tickets_from_storage
+    ticket_array.forEach(function(ticket){
+        createticket(ticket.id, ticket.ticket_text, ticket.ticket_clr)
+    })
+}
+add_btn.addEventListener("click", function(){
+is_click=!is_click
+if(is_click==true){
+    tick_cont.style.display="flex";
+}else{
+    tick_cont.style.display="none";
+}
+})
+tick_cont.addEventListener("keydown", function(e){
+    let key=e.key;
+    if(key=="Shift"){
+        let text=textarea.value
+        createticket(null, text, default_clr);
+        textarea.value="";
     }
 })
-task_cont.addEventListener("keydown", function (e) {
-    let key = e.key;
-    if (key == "Shift") {
-        let text = textarea.value;
-        new_ticket(text)
-        text.value.remove;
+
+
+function createticket(ticket_id ,ticket_text, ticket_clr){
+    
+    let id;
+    if(ticket_id){
+        id=ticket_id
+    }else{
+        id=shortid();
     }
-})
-function new_ticket(task) {
-    let id = shortid()
-    let new_task = document.createElement("div")
-    new_task.setAttribute("class", "ticket_area")
-    new_task.innerHTML = `<div class="ticket_color ${priority_clr}"></div>
+    let new_tick = document.createElement("div");
+    new_tick.setAttribute("class", "ticket_area")
+    new_tick.innerHTML=`<div class="ticket_color ${ticket_clr}"></div>
                 <div class="ticket_id">${id}</div>
-                <div class="ticket_task">${task}</div>
-                <div class="lock_icon"><i class="fa-solid fa-lock"></i></div>`
-    tick_cont.appendChild(new_task)
-    task_cont.style.display = "none"
-    lock_functionality(new_task)
-    delete_task(new_task)
-    color_filter(new_task)
-    filter_value(new_task)
+                <div class="ticket_task">${ticket_text}</div>
+                <div class="lock_icon"><i class="fa-solid fa-lock"></i></div>
+            </div>`
+            ticket_cont.appendChild(new_tick);
+            tick_cont.style.display="none";
+         
+           
+            changeColor(id, new_tick);
+            lockIcon(id, new_tick);
+            deleteTask(id,new_tick);
+            filter_pri(new_tick);
+         if(!ticket_id){
+            ticket_array.push({id, ticket_text, ticket_clr})
+            localStorage.setItem("ticket_array", JSON.stringify(ticket_array))
+         }  
+         console.log(ticket_array)
+            
+
 }
-all_clr.forEach(function (color_ele) {
-    color_ele.addEventListener("click", function () {
-        all_clr.forEach(function (priority_clr_ele) {
-            priority_clr_ele.classList.remove("active")
+priority_clr.forEach(function(colr_ele){
+    colr_ele.addEventListener("click", function(){
+    priority_clr.forEach(function(clr_attr){
+           clr_attr.classList.remove("active")
         })
-        color_ele.classList.add("active")
-        let selected_clr = color_ele.classList[1]
-        priority_clr = selected_clr
+        colr_ele.classList.add("active")
+        let selected_clr = colr_ele.classList[1]
+        default_clr=selected_clr;
+
     })
 })
-function lock_functionality(lock_task) {
-    let ticket_lock = lock_task.querySelector(".lock_icon")
-    let lock_class = ticket_lock.children[0]
-    let task_area = lock_task.querySelector(".ticket_task")
-    ticket_lock.addEventListener("click", function () {
-        if (lock_class.classList.contains(lockClass)) {
-            task_area.setAttribute("contenteditable", "true")
-            lock_class.classList.add(unlockClass)
-            lock_class.classList.remove(lockClass)
-        } else {
-            lock_class.classList.add(lockClass)
-            lock_class.classList.remove(unlockClass)
-            task_area.setAttribute("contenteditable", "false")
-        }
+function changeColor(id, ticket){
+  let curr_clr = ticket.querySelector(".ticket_color");
+  curr_clr.addEventListener("click", function(){
+    let curr_clr_val = curr_clr.classList[1];
+    let curr_clr_val_idx = clrArray.findIndex(function(clr){
+        return curr_clr_val==clr;
+    })
+    curr_clr_val_idx++;
+    let new_clr_val_idx = curr_clr_val_idx%clrArray.length;
+    let new_clr_val = clrArray[new_clr_val_idx]
+    curr_clr.classList.remove(curr_clr_val)
+    curr_clr.classList.add(new_clr_val)
+    let idx = ticket_array.findIndex(function(ticket){
+        return ticket.id==id;
+    })
+  ticket_array[idx].ticket_clr=new_clr_val;
+  updatelocalStorage();
+    })
+    
+  
+}
+function lockIcon(id, ticket){
+    let lock_icon_class= ticket.querySelector(".lock_icon")
+    let new_class = lock_icon_class.children[0];
+    let task_area = ticket.querySelector(".ticket_task")
+    lock_icon_class.addEventListener("click", function(){
+        if(new_class.classList.contains(lockClass)){
+            task_area.setAttribute("contenteditable", "true");
+            new_class.classList.remove(lockClass)
+            new_class.classList.add(unlockClass)
+        }else{
+            task_area.setAttribute("contenteditable", "false");
+            new_class.classList.remove(unlockClass)
+            new_class.classList.add(lockClass)
 
+        let idx=ticket_array.findIndex(function(ticket){
+            return ticket.id=id;
+        })
+        ticket_array[idx].ticket_text=task_area.textContent;
+        //   localStorage.setItem("ticket_array", JSON.stringify(ticket_array))
+        updatelocalStorage();
+        }
+        
     })
 }
-
-delete_btn.addEventListener("click", function () {
-    removetaskflag = !removetaskflag
-    if (removetaskflag == true) {
-        alert("Remove button Activated, please click on task you would like to delete")
+delete_btn.addEventListener("click", function(){
+    is_delete_clicked=!is_delete_clicked
+    if(is_delete_clicked==true){
+        alert("Delete button activated! please click on the task you would like delete")
         delete_btn.style.fontSize = "3rem"
-    } else {
-        alert("Remove button De-Activated")
+    }else{
+        alert("Delete button deactivation! now you cannot delete any tasks")
         delete_btn.style.fontSize = "2rem"
     }
-    delete_task();
+    deleteTask();
 
 })
-
-function delete_task(ticket) {
-    ticket.addEventListener("click", function () {
-        if (removetaskflag == false) {
+function deleteTask(id, ticket){
+    ticket.addEventListener("click", function(e){
+        if(is_delete_clicked==false){
             return;
-        } else {
-            ticket.remove()
-        }
-    })
-}
-
-
-function color_filter(ticket) {
-   let color_band = ticket.querySelector(".ticket_color");
-
-   color_band.addEventListener("click", function(){
-    let current_color_band = color_band.classList[1];
-    let current_color_band_index = color_array.findIndex(function(clr){
-        return current_color_band===clr
-    })
-    current_color_band_index++;
-    let new_color_bandidx = current_color_band_index%color_array.length;
-    let new_color_band = color_array[new_color_bandidx]
-    color_band.classList.remove(current_color_band)
-    color_band.classList.add(new_color_band)
-   })
-}
-
-
-function filter_value(ticket){
-Priority_filter.addEventListener("change", function(){
-    let current_val = Priority_filter.value;
-        for(let i =0;i<color_box.length;i++){
-            if(current_val===color_box[i].innerText){
-                let color_ele =color_box[i].previousSibling.classList[0];
-                let current_color = ticket.querySelector(".ticket_color")
-                let current_color_class=current_color.classList[1]
-              if(color_ele==current_color_class){
-                ticket.style.display="block"
-              }else{
-                ticket.style.display="none"
-              }
-            }
-        }
-
-})
-            filter_remove.addEventListener("click", function(){
-                ticket.style.display="initial"
-                Priority_filter.value=""
+        }else{
+            ticket.remove();
+            ticket_array= ticket_array.filter(function(ticket){
+                return ticket.id!=id;
             })
+            updatelocalStorage();
+        }
+    })
+
+ 
+}
+function filter_pri(ticket){
+    filter_field.addEventListener("change", function(){
+        let curr_val = filter_field.value;
+        for(let i =0;i<color_box.length;i++){
+        let pre = color_box[i].nextSibling.innerText;
+        if(curr_val==pre){
+let curr_clr_filter = color_box[i].classList[0];
+let current_clr  = ticket.querySelector(".ticket_color")
+let current_clr_class=current_clr.classList[1]
+                if(curr_clr_filter==current_clr_class){
+                    ticket.style.display="block";
+                }else{
+                    ticket.style.display="none";
+                }
+        }
+        
+        }
+    })
+
+filter_removal.addEventListener("click", function(){
+    ticket.style.display="initial";
+    filter_field.value="";
+})
+}
+function updatelocalStorage(){
+    localStorage.setItem("ticket_array", JSON.stringify(ticket_array))
 }

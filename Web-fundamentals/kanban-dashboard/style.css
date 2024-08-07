@@ -103,7 +103,7 @@ nav{
 }
 .task_container{
         background-color: whitesmoke;
-    display: flex;
+    display: none;
     width: 55vw;
     height: 55vh;  
     margin-top: 2rem;
