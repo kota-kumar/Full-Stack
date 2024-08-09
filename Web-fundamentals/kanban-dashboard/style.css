@@ -2,9 +2,11 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+ 
 }
 body{
     background-color: #D6E5E3;
+  
   
 }
 nav{
@@ -24,13 +26,19 @@ nav{
     display: flex;
     padding-left: 1rem;
     align-items: center;
+    margin-top: 0.5rem;
+    
 }
 .priority_color{
     display: flex;
-    width: 42rem;
+    width: 50rem;
     gap:0.5rem;
-  
+    font-family: "Catamaran", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     align-items: center;
+    font-size: 1.3rem;
 }
 .ticket_filter{
     display: flex;
@@ -39,6 +47,10 @@ nav{
 }
 .ticket_filter>label{
     font-size: 1.2rem;
+    font-family: "Catamaran", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 .ticket_filter>option{
     font-size: 1rem;
@@ -137,7 +149,6 @@ nav{
     justify-content: center;
     padding: 2rem;
     gap: 2rem;
-  
 }
 .ticket_area{
     width: 16rem;
@@ -163,19 +174,27 @@ nav{
 .active{
     border: 4px solid lightyellow;
 }
-/* .task_category_container{
-
-
+.status_container{
+    background-color:#DCD6F7;
+    margin-left: 2.6rem;
+    margin-right: 1.4rem;
+    
+}
+.status_category{
     display: flex;
     justify-content: space-between;
-    align-items: start;
- 
+    border: 2px solid;
+    
 }
-table{
-    width: 100vw;
-    height: 80vh;
-    border: 2px double black;
+.status_category h2{
     display: flex;
-align-items: start;
-justify-content: space-between;
-} */
+    justify-content: center;
+    font-family: "Catamaran", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    border-left: 2px solid;
+    height: 500px;
+    width: -webkit-fill-available;
+}
+
