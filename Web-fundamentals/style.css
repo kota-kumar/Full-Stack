@@ -363,7 +363,7 @@ margin-right: 12rem;
   max-width: 1200px;
   margin: 0 auto;
   top:5rem;
-  left:-4.6rem;
+  left:-5.6rem;
 }
 .timeline::before{
   content: '';
@@ -446,7 +446,7 @@ z-index: 1;
 .res h2{
   font-family: "Work Sans", sans-serif;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 20px;
 }
 .res span{
@@ -609,4 +609,12 @@ padding-bottom: 7px;
   width: 75%;
   background-color:#b8b846;
   border-radius: 5px;
+}
+.portfolio hr{
+    width: 45px;
+    background-color: #b8b846;
+    height: 6px;
+    border-radius: 15px;
+    margin-top: 13px;
+    margin-bottom: 16px;
 }
