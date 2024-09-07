@@ -1,11 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="/Web-fundamentals/JS/css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Catamaran:wght@100..900&family=Gupter:wght@400;500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 <body>
-    
+    <nav>
+        <div class="container">
+            <div class="nav_section">
+                <div class="priority_color">
+                    <div class="gray color_box"></div>
+                    <p>Low Priority</p>
+                    <div class="purple color_box"></div>
+                    <p>Medium Priority</p>
+                    <div class="green color_box"></div>
+                    <p>High Priority</p>
+                    <div class="jasper color_box"></div>
+                    <p>Critical</p>
+
+                </div>
+
+                <section>
+                    <form class="ticket_filter">
+                        <label class="filter">Choose priority</label>
+                        <select Name="Priority_filter" id="priority_filter">
+                            <option value="" disabled selected>Select your priority</option>
+                            <option>Low Priority</option>
+                            <option>Medium Priority</option>
+                            <option>High Priority</option>
+                            <option>Critical</option>
+                        </select>
+                        <div class="filter_removal"><i class="fa-solid fa-filter"></i></div>
+                    </form>
+                </section>
+
+                <div class="action_btn">
+                    <div class="add_btn"><i class="fa-solid fa-plus"></i></div>
+                    <div class="delete_btn"><i class="fa-solid fa-trash-can"></i></div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    </section>
+    <!-- <section>
+        <div class="new_task_area">
+            <label id = "Summary">Summary</label>
+            <textarea placeholder="Enter your task Summary" class="textArea-cont"></textarea>
+
+            <form class="priorit_select">
+                <label class="priority-pick">Select your ticket priority</label>
+                <select Name="Priority_filter" id="priority_picker">
+                    <option value="" disabled selected>Select your priority</option>
+                    <option>Low Priority</option>
+                    <option>Medium Priority</option>
+                    <option>High Priority</option>
+                    <option>Critical</option>
+                </select>
+            <button type="submit" id="add_task">Add +</button>
+            <button id="cancel_task">Cancel</button>
+        </div>
+    </section>
+    <section>
+
+     <div class="ticket_area" draggable="true">
+                <div class="ticket_task_area">this is a new ticket</div>
+                <div class="ticket_id_sec">
+                    <div class="ticket_color gray"></div>
+                <div class="ticket_id">1234</div>
+               
+                </div>
+            </div> -->
+
+    <!-- </section>
+    <section>
+        <div class="catergoty_section">
+            <div class="sections" id="not_started">
+                <h2>Not Started</h2>
+            </div>
+            <div class="sections" id="in_progress">
+                <h2>In Progress</h2>
+            </div>
+            <div class="sections" id="in_review">
+                <h2>In Review</h2>
+            </div>
+            <div class="sections" id="comp">
+                <h2>Completed</h2>
+            </div>
+        </div>
+    </section>
+
 </body>
-</html>
+
+<script src="/Web-fundamentals/JS/js.js"></script>
+<script src="https://unpkg.com/shortid-dist@1.0.5/dist/shortid-2.2.13.min.js"></script>
+
+</html> -->

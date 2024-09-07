@@ -129,7 +129,6 @@ body {
     display: none;
     gap: 5px;
     margin: 2rem;
-    width: 85vw;
     height: 20vh;
     justify-content: center;
     align-items: center;
@@ -140,7 +139,7 @@ body {
 
 #new_task {
     padding: 10px;
-    width: 255px;
+    width: 250px;
     border-radius: 4px;
     border: none;
     box-shadow: 0px 5px 10px #0e0f0f;
@@ -166,7 +165,7 @@ body {
 }
 
 .new_task_area>button {
-    padding: 12px 32px;
+    padding: 12px 22px;
     border-radius: 4px;
     border: none;
     box-shadow: 0px 5px 10px #0e0f0f;
@@ -177,6 +176,10 @@ body {
     display: flex;
     gap: 1.3rem;
     background: #D1DEDE;
+}
+
+#duedate{
+  font-size: 1.3rem;
 }
 
 .ticket_container {
