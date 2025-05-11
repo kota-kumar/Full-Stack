@@ -1,10 +1,19 @@
 import React from 'react'
-
+import NavSection from '../components/NavSection'
+import Watchlist from '../components/Watchlist'
+import MovieRecommendation from '../components/MovieRecommendation'
+import Banner from '../components/banner'
 function App() {
   return (
-    <div className='bg-red-200 w-[20vw] h-[50vh]'>
-      
-    </div>
+   <>
+   <div className='bg-black '>
+
+   <NavSection />
+<Banner />
+   </div>
+
+   
+   </>
   )
 }
 
