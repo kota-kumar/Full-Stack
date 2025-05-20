@@ -6,11 +6,11 @@ import SignIn from './SignIn'
 function NavSection() {
   return (
     <>
-        <div className='bg-black w-[full] p-2 pl-5 flex gap-7 items-center text-white h-[10vh]'>
-        <h2 className='text-black font-sans bg-yellow-400 w-[80px] h-[6vh] text-center text-2xl font-black'>IMDB</h2>
+        <div className='bg-black w-full p-2 pl-5 flex gap-7 items-center text-white h-[10vh]'>
+        <h2 className='text-black font-sans bg-yellow-400 w-[80px] h-[5vh] flex items-center justify-center text-center text-2xl font-black'>IMDB</h2>
 
-            <div className=' w-fit h-[6vh] pr-3 bg-white flex items-center justify-center'>
-              <select id='category' className='w-auto border text-black pl-2 h-[6vh]' >
+            <div className=' w-fit h-[5vh] pr-3 bg-white flex items-center justify-center'>
+              <select id='category' className='w-auto border text-black pl-2 h-[5vh]' >
         <option value="all" >All</option>
         <option value="titles" >Titles</option>
         <option value="tv-episodes" >TV Episodes</option>
