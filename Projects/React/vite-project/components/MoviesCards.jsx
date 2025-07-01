@@ -10,7 +10,7 @@ function MoviesCards() {
     },)
   return (
     <div>
-       <div className='space-y-8 flex flex-wrap gap-5 justify-evenly'>
+       <div className='space-y-8 flex flex-wrap gap-3 justify-evenly'>
         {
       moviecards.map((movieObj)=>(
             <MoviesSection  movieObj={movieObj} />
